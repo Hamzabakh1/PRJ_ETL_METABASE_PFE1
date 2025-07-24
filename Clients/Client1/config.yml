@@ -8,7 +8,7 @@ source_db:
   connection_timeout: 30
 snowflake:
   account: your_snowflake_account
-  user: HAMZABAKH9
+  user: USER
   password: your_password_account
   warehouse: COMPUTE_WH
   database: BEE_CENTER
