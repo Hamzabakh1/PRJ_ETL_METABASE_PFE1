@@ -21,7 +21,7 @@ DEFAULTS = {
     },
     "snowflake": {
         "account":   "your_snowflake_account",
-        "user":      "HAMZABAKH9",
+        "user":      "USER",
         "password":  "your_password_account",
         # Alternatively, consider using env var: os.getenv("SF_PASSWORD", DEFAULTS["snowflake"]["password"])
         "warehouse": "COMPUTE_WH",
