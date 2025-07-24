@@ -1,0 +1,7 @@
+prefect==2.14.5
+pyyaml
+snowflake-connector-python[pandas]
+sqlalchemy
+pandas
+numpy
+questionary
