@@ -3,13 +3,13 @@ client_name: Client1
 source_db:
   driver: '{ODBC Driver 17 for SQL Server}'
   server: DESKTOP-AGUMSPH
-  database: BEE_CALLYSTAR
+  database: DATABASE
   trusted_connection: 'yes'
   connection_timeout: 30
 snowflake:
-  account: CXKKQLG-TP05388
+  account: your_snowflake_account
   user: HAMZABAKH9
-  password: HamzaBakh2002@@2002@@2002@@
+  password: your_password_account
   warehouse: COMPUTE_WH
   database: BEE_CENTER
   schema: CLIENT1
