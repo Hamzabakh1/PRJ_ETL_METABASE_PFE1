@@ -2,9 +2,9 @@ import os
 import snowflake.connector
 
 # ── 1️⃣ Charger la config depuis les variables d’environnement ───────────────
-SF_ACCOUNT   = os.getenv("SF_ACCOUNT",   "UFVXKZD-YW58283")
+SF_ACCOUNT   = os.getenv("SF_ACCOUNT",   "your_snowflake_account")
 SF_USER      = os.getenv("SF_USER",      "HB20112002")
-SF_PASSWORD  = os.getenv("SF_PASSWORD",  "HamzaBakh2002@@2002@@2002@@")
+SF_PASSWORD  = os.getenv("SF_PASSWORD",  "your_password_account")
 SF_WAREHOUSE = os.getenv("SF_WAREHOUSE", "COMPUTE_WH")
 SF_ROLE      = os.getenv("SF_ROLE",      "ACCOUNTADMIN")
 
