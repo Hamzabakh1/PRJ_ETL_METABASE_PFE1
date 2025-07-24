@@ -4,7 +4,7 @@ import snowflake.connector
 # 1 ✨ Connexion
 conn = snowflake.connector.connect(
     account   = os.getenv("SF_ACCOUNT",   "your_snowflake_account"),
-    user      = os.getenv("SF_USER",      "HB20112002"),
+    user      = os.getenv("SF_USER",      "USER"),
     password  = os.getenv("SF_PASSWORD",  "your_password_account"),
     warehouse = os.getenv("SF_WAREHOUSE", "COMPUTE_WH"),
     role      = os.getenv("SF_ROLE",      "ACCOUNTADMIN"),
