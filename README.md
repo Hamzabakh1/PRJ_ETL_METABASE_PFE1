@@ -3,6 +3,7 @@
 An end‑to‑end, production-grade ETL (Extract‑Transform‑Load) pipeline designed to streamline data integration from multiple SQL Server sources into a central Snowflake data warehouse. The processed data is then analyzed through the Metabase BI platform. This solution supports modular configuration per client, automated workflows, centralized dashboards, and secure tenant-level isolation.
 
 ---
+![Architecture Diagram](output.png)
 
 ---
 
