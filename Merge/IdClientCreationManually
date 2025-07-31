@@ -1,0 +1,35 @@
+CREATE OR REPLACE PROCEDURE add_id_client_column()
+RETURNS STRING
+LANGUAGE JAVASCRIPT
+AS
+$$
+    var id_client_value;
+    var sql_command;
+    var tables = ['BUDGET', 'COMPTES_ANALYTIQUES', 'COMPTES_BUDGETAIRES', 'COMPTES_PL', 'COUTS_BEEONE', 'PRODUCTION_BEEONE', 'PROFIL_DE_PRODUCTION', 'VERSIONS_BUDGET', 'DIM_PERSONNEL', 'DIM_OPERATION', 'DIM_PARCELLE', 'DIM_FERME', 'DIM_CAMPAGNE', 'DIM_CENTRE', 'FACT_POINTAGE'];
+    
+    // Get the id_client value for BEE_TEST
+    var result = snowflake.execute(
+        {sqlText: "SELECT ID_CLIENT FROM MASTER.PUBLIC.CLIENT_DATABASES WHERE DATABASE_NAME = 'BEE_TEST'"}
+    );
+    
+    if (result.next()) {
+        id_client_value = result.getColumnValue(1);
+    } else {
+        return "Error: No ID_CLIENT found for BEE_TEST.";
+    }
+
+    // Loop through tables and execute ALTER TABLE
+    for (var i = 0; i < tables.length; i++) {
+        sql_command = `ALTER TABLE BEE_TEST.PUBLIC.${tables[i]} ADD COLUMN IF NOT EXISTS id_client INT DEFAULT ${id_client_value}`;
+        
+        try {
+            snowflake.execute({sqlText: sql_command});
+        } catch (err) {
+            return `Error executing: ${sql_command}. Error: ${err}`;
+        }
+    }
+
+    return "Columns added successfully.";
+$$;
+
+CALL add_id_client_column();
